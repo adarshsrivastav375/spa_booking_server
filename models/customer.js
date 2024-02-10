@@ -12,5 +12,9 @@ const customerSchema = new mongoose.Schema({
   mobile: {
     type: Number,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 export const Customer = mongoose.model("Customer", customerSchema);

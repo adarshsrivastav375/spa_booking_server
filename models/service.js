@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { Business } from "./business.js";
 
-const serviceSchema = new mongoose.schema({
+const serviceSchema = new mongoose.Schema({
   business_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Bussiness",
@@ -19,4 +20,4 @@ const serviceSchema = new mongoose.schema({
     required: true,
   },
 });
-export const Servises = mongoose.model("Services", serviceSchema);
+export const Service = mongoose.model("Service", serviceSchema);

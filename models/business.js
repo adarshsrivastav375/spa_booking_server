@@ -21,9 +21,13 @@ const businessSchema = mongoose.Schema({
     type: Object,
     required: true,
   },
-  number_of_chairs: {
+  chairs: {
     type: Number,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 });
-export const Buseness = mongoose.model("buseness", businessSchema);
+export const Business = mongoose.model("Business", businessSchema);
