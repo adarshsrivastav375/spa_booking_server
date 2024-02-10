@@ -51,11 +51,6 @@ router.post("/sign-up", async (req, res) => {
   }
 });
 
-
-
-
-
-
 //find all user
 router.get("/", async (req, res) => {
   try {
