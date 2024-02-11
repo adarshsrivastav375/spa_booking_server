@@ -13,7 +13,7 @@ router.post("/sign-up", async (req, res) => {
         .send({ status: false, message: "Email already exist" });
     }
     const response = await Business.create(req.body);
-    return res.status().send({
+    return res.status(200).send({
       status: true,
       message: "Business registered successfully",
       response,
