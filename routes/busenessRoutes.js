@@ -87,7 +87,7 @@ router.delete("/:id", async (req, res) => {
     res.status(400).json({ error: "internal server error" });
   }
 });
-
+//update a business
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
