@@ -19,5 +19,12 @@ const serviceSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  totalSeat: {
+    type: Number,
+    required: true,
+  },
+  filled: {
+    type: Number,
+  },
 });
 export const Service = mongoose.model("Service", serviceSchema);
