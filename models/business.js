@@ -34,4 +34,5 @@ const businessSchema = mongoose.Schema({
     required: true,
   },
 });
+
 export const Business = mongoose.model("Business", businessSchema);
