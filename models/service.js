@@ -26,5 +26,6 @@ const serviceSchema = new mongoose.Schema({
   filled: {
     type: Number,
   },
+  
 });
 export const Service = mongoose.model("Service", serviceSchema);

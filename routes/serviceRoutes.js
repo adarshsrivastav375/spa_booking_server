@@ -4,19 +4,6 @@ import { Service } from "../models/service.js";
 const router = express.Router();
 
 //post a service
-router.post("/add/:businessId", async (req, res) => {
-  try {
-    const newService = new Service({
-      ...req.body,
-      business_id: req.params.businessId,
-    });
-    const savedService = await newService.save();
-    res.status(201).json(savedService);
-  } catch (error) {
-    console.log(error.message);
-    res.status(500).json({ error: "bad request" });
-  }
-});
 router.post("/:businessId", async (req, res) => {
   try {
     const newService = new Service({

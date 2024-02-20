@@ -50,15 +50,29 @@ router.post("/login", async (req, res) => {
   }
 });
 // find all company;
-router.get("/", async (req, res) => {
+// router.get("/", async (req, res) => {
+//   try {
+//     const businesses = await Business.find();
+//     res.json(businesses);
+//   } catch (error) {
+//     console.log(error.message);
+//     res.status(500).json({ error: "internal server Error" });
+//   }
+// });
+// find all company;
+router.get("/search", async (req, res) => {
   try {
-    const businesses = await Business.find();
-    res.json(businesses);
+   const search = req.query.search || "";
+    const business = await Business.find({
+      companyName: { $regex: search, $options: "i" },
+    });
+    res.send(business);
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ error: "internal server Error" });
   }
 });
+
 // fined one by id
 
 router.get("/:id", async (req, res) => {
@@ -100,6 +114,14 @@ router.put("/:id", async (req, res) => {
     res.status(200).json(updatedBusiness);
   } catch (error) {
     res.status(400).json({ error: "bad request" });
+  }
+});
+// search by name
+router.get("/search", async (req, res) => {
+  try {
+    console.log(req.query);
+  } catch (error) {
+    res.send(error);
   }
 });
 

@@ -18,7 +18,7 @@ app.get("/", (request, response) => {
 });
 
 //routes
-app.use("/api/businesses", businessRoutes);
+app.use("/api/business", businessRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/services", serviceRoutes);
 
